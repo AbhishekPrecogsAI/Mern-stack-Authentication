@@ -30,6 +30,16 @@ def get_user(username):
     return cursor.fetchall()
 
 
+
+# 7️⃣ UNSAFE EVAL
+def calculate(expression):
+    return eval(expression)
+
+
+# 8️⃣ WEAK PASSWORD HASHING
+def hash_password(password):
+    return hashlib.md5(password.encode()).hexdigest()
+
 # 4️⃣ INSECURE DESERIALIZATION (RCE)
 def load_session(data):
     return pickle.loads(data)
@@ -45,15 +55,6 @@ def read_file(filename):
 def fetch_url(url):
     return requests.get(url).text
 
-
-# 7️⃣ UNSAFE EVAL
-def calculate(expression):
-    return eval(expression)
-
-
-# 8️⃣ WEAK PASSWORD HASHING
-def hash_password(password):
-    return hashlib.md5(password.encode()).hexdigest()
 
 
 # 9️⃣ FLASK DEBUG MODE + USER INPUT EXECUTION
